@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage("Clone Code"){
             steps{
-                git url: "https://github.com/rakeshhazarika1993/node-todo-cicd.git", branch: "master"
+                git url: "https://github.com/rhazarik/node-todo-cicd.git", branch: "master"
             }
         }
         stage("Build and Test"){
@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Deploy"){
             steps{
-                sh "docker-compose down && docker-compose up -d"
+                sh "docker compose down && docker compose up -d"
             }
         }
     }
